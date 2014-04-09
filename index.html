@@ -5,6 +5,15 @@
 </head>
 <body data-ng-controller="HomeCtrl">
     <h1>{{Header}}</h1>
+    <div>
+        <ul>
+            <li data-ng-repeat="item in items">{{item.itemName}} <a href="#" id="{{item.id}}" data-ng-click="removeItem($index)">X</a></li>
+        </ul>
+        <form data-ng-submit="addItem()">
+            <input type="text" data-ng-model="newItem" />
+            <input type="submit" value="Add Item" />
+        </form>
+    </div>
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
     <script src="app/app.js"></script>
