@@ -18,7 +18,7 @@ demoAngular.controller('HomeCtrl', function ($scope) {
     //      creates a new item with the name provided by the $scope.newItem value
     //      and then adds it to the object array $scope.items
     $scope.addItem = function () {
-        var newItem = { "itemName": "", "itemId": "" };
+        var newItem = {};
         newItem.itemName = $scope.newItemName;
         newItem.itemDescription = $scope.newItemDescription;
 
