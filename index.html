@@ -2,21 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="demoAngular">
 <head>
     <title>Demo Angular - {{CurrentPageName}}</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/demoAngular.css" rel="stylesheet" />
 </head>
 <body data-ng-controller="HomeCtrl">
-    <h1>{{Header}}</h1>
-    <div>
-        <ul>
-            <li data-ng-repeat="item in items">{{item.itemName}} <a href="#" id="{{item.id}}" data-ng-click="removeItem($index)">X</a></li>
-        </ul>
-        <form data-ng-submit="addItem()">
-            <input type="text" data-ng-model="newItem" />
-            <input type="submit" value="Add Item" />
-        </form>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-md-4 panel panel-default">
+                <h2 class="form-signin-heading panel-heading">{{InputBoxTitle}}</h2>
+                <form class="form-signin" role="form" data-ng-submit=" addItem()">
+                    <label for="txtItemName">Item Name:</label>
+                    <input type="text" class="form-control" name="txtItemName" data-ng-model="newItemName" />
+                    <label for="txtItemDescription">Item Description:</label>
+                    <textarea class="form-control" rows="5" cols="25" name="txtItemDescription" data-ng-model="newItemDescription"></textarea>
+                    <br />
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Add Item" />
+                </form>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="col-md-8 container">
+                <ul>
+                    <li class="list-group-item" data-ng-repeat=" item in items">
+                        <item-detail item="item" remove-item="removeItem($index)"></item-detail>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
     <script src="app/app.js"></script>
     <script src="app/controllers/homeCtrl.js"></script>
+    <script src="app/directives/itemDetail.js"></script>
 </body>
 </html>

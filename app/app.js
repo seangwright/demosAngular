@@ -2,7 +2,9 @@
     Main app module
 */
 
-var demoAngular = angular.module('demoAngular', []);
+var demoAngular = angular.module('demoAngular', [
+    'app.directives.itemDetail'
+]);
 
 window.app = {};
 document.addEventListener("apiReady", function () {

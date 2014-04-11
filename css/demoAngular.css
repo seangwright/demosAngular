@@ -1,0 +1,7 @@
+﻿.panel-close {
+    content: url(../img/close24x24.gif);
+    margin: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
