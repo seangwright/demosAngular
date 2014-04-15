@@ -6,34 +6,27 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/demoAngular.css" rel="stylesheet" />
 </head>
-<body data-ng-controller="HomeCtrl">
+<body>
     <div class="jumbotron">
         <div class="container">
-            <div class="col-md-4 panel panel-default">
-                <h2 class="form-signin-heading panel-heading">{{InputBoxTitle}}</h2>
-                <form class="form-signin" role="form" data-ng-submit=" addItem()">
-                    <label for="txtItemName">Item Name:</label>
-                    <input type="text" class="form-control" name="txtItemName" data-ng-model="newItemName" />
-                    <label for="txtItemDescription">Item Description:</label>
-                    <textarea class="form-control" rows="5" cols="25" name="txtItemDescription" data-ng-model="newItemDescription"></textarea>
-                    <br />
-                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Add Item" />
-                </form>
-                <div class="panel-footer"></div>
-            </div>
-            <div class="col-md-8 container">
-                <ul>
-                    <li class="list-group-item" data-ng-repeat=" item in items">
-                        <item-detail item="item" remove-item="removeItem($index)"></item-detail>
+            <div class="navbar navbar-default" data-ng-controller="MenuCtrl">
+                <ul class="nav navbar-nav">
+                    <li class="list-group-item" data-ng-repeat="menuItem in menu">
+                        <a href="{{menuItem.link}}" ng-click="randomizeMenu()">{{menuItem.title}}</a>
                     </li>
                 </ul>
             </div>
+            <div data-ng-view></div>
         </div>
     </div>
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/controllers/homeCtrl.js"></script>
-    <script src="app/directives/itemDetail.js"></script>
+    <script src="app/controllers/MenuCtrl.js"></script>
+    <script src="app/controllers/ItemListCtrl.js"></script>
+    <script src="app/controllers/ItemDetailCtrl.js"></script>
+    <script src="app/services/ItemService.js"></script>
+    <script src="app/directives/itemDetailDir.js"></script>
+    <script src="app/dreamFactoryAPI.js"></script>
 </body>
 </html>

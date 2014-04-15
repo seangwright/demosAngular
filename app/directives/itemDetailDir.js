@@ -1,14 +1,22 @@
-﻿angular.module('app.directives.itemDetail', [])
+﻿/*
+
+    Item Detail directive
+
+*/
+
+
+angular.module('app.directives.itemDetail', [])
     .directive('itemDetail', function () {
         return {
             restrict: 'E',
             scope: {
                 item: '=',
-                removeItem: '&'
+                removeItem: '&',
+                index: '='
             },
             replace: true,
             transclude: true,
-            templateUrl: "app/templates/directives/itemDetail.html",
+            templateUrl: "app/directives/templates/itemDetailDir.html",
             link: function (scope, element, attrs) {},
             controller: function ($scope) {}
         };
