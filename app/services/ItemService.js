@@ -10,6 +10,8 @@
 angular.module('app.services.itemService', [])
     .service('ItemService', function () {
 
+        this.items = [];
+
         this.getItems = function () {
             return this.items;
         };
