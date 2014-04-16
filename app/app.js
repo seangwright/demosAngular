@@ -12,16 +12,19 @@ demoAngular.config(function ($routeProvider) {
     $routeProvider.when('/item',
         {
             templateUrl: 'app/controllers/templates/itemList.html',
-            controller: 'ItemListCtrl'
+            controller: 'ItemListController'
         })
-    $routeProvider.when('/items',
+    .when('/items',
         {
             templateUrl: 'app/controllers/templates/itemList.html',
-            controller: 'ItemListCtrl'
+            controller: 'ItemListController'
         })
-    $routeProvider.when('/item/:itemId',
+    .when('/item/:itemId',
         {
             templateUrl: 'app/controllers/templates/itemDetail.html',
-            controller: 'ItemDetailCtrl'
+            controller: 'ItemDetailController'
         })
+    .otherwise({
+        redirectTo: '/'
+    });
 });

@@ -4,7 +4,7 @@
 
 */
 
-demoAngular.controller('MenuCtrl', ['$scope', '$routeParams', 'ItemService',
+demoAngular.controller('MenuController', ['$scope', '$routeParams', 'ItemService',
     function ($scope, $routeParams, ItemService) {
 
         init();
@@ -12,10 +12,11 @@ demoAngular.controller('MenuCtrl', ['$scope', '$routeParams', 'ItemService',
         // init
         //      initializes all the values attached to $scope
         function init() {
-            $scope.CurrentPageName = "Home";
+            $scope.page = {};
+            $scope.page.CurrentPageName = "Home";
 
             // Create a menu to navigate around the app
-            $scope.menu = [
+            $scope.page.menu = [
                 {
                     'title': 'Home',
                     'link': '/'
@@ -37,7 +38,7 @@ demoAngular.controller('MenuCtrl', ['$scope', '$routeParams', 'ItemService',
             */
 
             // Pick a random item to display in the menu
-            $scope.randomizeMenu = function () {
+            $scope.page.randomizeMenu = function () {
 
                 /* Not Currently Working => When item is deleted menu is not updated
                 var items = ItemService.getItems();

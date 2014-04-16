@@ -1,10 +1,10 @@
 ﻿<div class="col-md-4 panel panel-default">
-    <h2 class="form-signin-heading panel-heading">{{InputBoxTitle}}</h2>
-    <form class="form-signin" role="form" data-ng-submit=" addItem()">
+    <h2 class="form-signin-heading panel-heading">{{page.InputBoxTitle}}</h2>
+    <form class="form-signin" role="form" data-ng-submit="page.addItem()">
         <label for="txtItemName">Item Name:</label>
-        <input type="text" class="form-control" name="txtItemName" data-ng-model="newItemName" />
+        <input type="text" class="form-control" name="txtItemName" data-ng-model="page.newItemName" required />
         <label for="txtItemDescription">Item Description:</label>
-        <textarea class="form-control" rows="5" cols="25" name="txtItemDescription" data-ng-model="newItemDescription"></textarea>
+        <textarea class="form-control" rows="5" cols="25" name="txtItemDescription" data-ng-model="page.newItemDescription"></textarea>
         <br />
         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Add Item" />
     </form>
@@ -12,8 +12,8 @@
 </div>
 <div class="col-md-8 container">
     <ul>
-        <li class="list-group-item" data-ng-repeat=" item in items">
-            <item-detail item="item" index="$index" remove-item="removeItem($index)"></item-detail>
+        <li class="list-group-item" data-ng-repeat=" item in page.items">
+            <item-detail item="item" index="$index" remove-item="page.removeItem($index)"></item-detail>
         </li>
     </ul>
 </div>

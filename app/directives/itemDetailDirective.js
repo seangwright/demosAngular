@@ -16,7 +16,7 @@ angular.module('app.directives.itemDetail', [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "app/directives/templates/itemDetailDir.html",
+            templateUrl: "app/directives/templates/itemDetailDirective.html",
             link: function (scope, element, attrs) {},
             controller: function ($scope) {}
         };

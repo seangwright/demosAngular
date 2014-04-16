@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="demoAngular">
 <head>
-    <title>Demo Angular - {{CurrentPageName}}</title>
+    <title>Demo Angular - {{page.CurrentPageName}}</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/demoAngular.css" rel="stylesheet" />
@@ -9,10 +9,10 @@
 <body>
     <div class="jumbotron">
         <div class="container">
-            <div class="navbar navbar-default" data-ng-controller="MenuCtrl">
+            <div class="navbar navbar-default" data-ng-controller="MenuController">
                 <ul class="nav navbar-nav">
-                    <li class="list-group-item" data-ng-repeat="menuItem in menu">
-                        <a href="{{menuItem.link}}" ng-click="randomizeMenu()">{{menuItem.title}}</a>
+                    <li class="list-group-item" data-ng-repeat="menuItem in page.menu">
+                        <a href="{{menuItem.link}}" ng-click="page.randomizeMenu()">{{menuItem.title}}</a>
                     </li>
                 </ul>
             </div>
@@ -22,11 +22,11 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/controllers/MenuCtrl.js"></script>
-    <script src="app/controllers/ItemListCtrl.js"></script>
-    <script src="app/controllers/ItemDetailCtrl.js"></script>
+    <script src="app/controllers/MenuController.js"></script>
+    <script src="app/controllers/ItemListController.js"></script>
+    <script src="app/controllers/ItemDetailController.js"></script>
     <script src="app/services/ItemService.js"></script>
-    <script src="app/directives/itemDetailDir.js"></script>
+    <script src="app/directives/itemDetailDirective.js"></script>
     <script src="app/dreamFactoryAPI.js"></script>
 </body>
 </html>
